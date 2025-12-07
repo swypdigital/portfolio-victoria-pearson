@@ -4,6 +4,13 @@
 # Maximum parallelization with maintained functionality
 # Author: groklyGroup™ LLC
 
+# Source contractual database paths
+if [ -f "${CLAUDE_PROJECTS_ROOT}/contractual-db-paths.sh" ]; then
+    source "${CLAUDE_PROJECTS_ROOT}/contractual-db-paths.sh"
+elif [ -f "$(dirname "$0")/contractual-db-paths.sh" ]; then
+    source "$(dirname "$0")/contractual-db-paths.sh"
+fi
+
 # Performance timing function
 time_section() {
     local name=$1
@@ -333,7 +340,7 @@ fi
     "project_name": "$PROJECT_NAME",
     "tmux_session": "claude-$PROJECT_NAME",
     "history_file": "$HISTORY_FILE",
-    "quantum_todo": "$BACKUP_DIR/.quantum-todo/quantum-index.db",
+    "quantum_todo": "$QUANTUM_INDEX_DB",
     "line_count": $HISTORY_LINES,
     "universal_history_dir": "$UNIVERSAL_HISTORY_DIR",
     "working_directory": "$PWD",
