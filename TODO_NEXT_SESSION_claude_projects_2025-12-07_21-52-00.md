@@ -66,13 +66,94 @@
 ```
 
 ## PROJECT-SPECIFIC TASKS:
-[CLAUDE MUST ADD SPECIFIC TASKS FOR THIS PROJECT]
+
+### Database Consolidation (BLOCKING - Phase 7)
+1. Extract schemas from both databases and identify 3 extra columns
+2. Create column-mapped INSERT statement for schema compatibility
+3. Test merge on backup copies first
+4. Execute final merge with schema alignment
+5. Verify all 53,410 unique tasks preserved (27,798 + 25,555 + 57)
+6. Update 3 scripts still referencing quantum-todo.db
+7. Archive quantum-todo.db safely
+8. Monitor 24 hours for stability
+
+### Session System Issues
+1. Fix TMUX scrollback capture (only getting 24 lines instead of full buffer)
+2. Debug daemon supervisor auto-start (too much manual friction)
+3. Verify all 9 daemons start automatically with session
+
+### GenCraft v3.0 Continuation
+1. Resume Phase 1 data gathering (currently 95% complete)
+2. Address 35 remaining gaps (18 high, 11 medium, 6 informational)
+3. Complete vertical batches (phases 6.1, 6.2, 6.3)
 
 ## IN PROGRESS ITEMS:
-[CLAUDE MUST LIST ANY INCOMPLETE WORK WITH STATUS]
+
+**🔴 BLOCKING: Database Consolidation Phase 7-8**
+- Status: Paused at schema mismatch error
+- Blocker: quantum-index.db has 32 columns, quantum-todo.db has 29 columns
+- Next Action: Schema analysis and column mapping
+- Safety: 4-level rollback system ready (507MB backups)
+- Documentation: 11 comprehensive analysis files created
+
+**⏳ GenCraft v3.0.3 Development**
+- Status: In progress (35 gaps remaining)
+- Completed: 12 critical gaps (v3.0.2), 5 high-priority gaps (v3.0.3)
+- Blocked By: Database consolidation (higher priority)
+- Documentation: Gap analysis complete
+
+**🔧 Universal Workforce Actions**
+- Status: Actions 1-2 complete (2,631 lines of code)
+- Remaining: Action 3 (Documentation - architecture diagram, ARCHITECTURE.md, README updates)
+- Remaining: Integration tests for auth services
+- Remaining: Integrate auth middleware into orchestrator
 
 ## TESTING REQUIRED:
-[CLAUDE MUST SPECIFY WHAT NEEDS TESTING]
+
+### Database Merge Testing (CRITICAL)
+1. **Schema Compatibility Test**: Verify column-mapped INSERT works on backup copies
+2. **Data Integrity Test**: Confirm all 53,410 unique tasks transferred
+3. **Duplicate Handling Test**: Verify 57 overlapping tasks handled correctly (INSERT OR IGNORE)
+4. **Script Dependency Test**: Test all 6 scripts using quantum-index.db still work
+5. **Performance Test**: Verify merged database performs at same speed
+6. **Rollback Test**: Test all 4 rollback levels can restore to previous state
+
+### Session System Testing
+1. **TMUX Scrollback Test**: Investigate why only 24 lines captured
+2. **Daemon Supervisor Test**: Verify auto-start functionality
+3. **Chat Backup Test**: Confirm 1,952-line capture method reliable
+
+### Post-Merge Integration Testing
+1. Test CLAUDE_SESSION_END_PROTOCOL.sh with updated database path
+2. Test AUTO_SESSION_END_PROTOCOL.sh with updated database path
+3. Test rollback-quantum-todo-changes.sh with updated database path
+4. Verify quantum TODO system works with single consolidated database
+5. Monitor for 24 hours to catch any edge cases
 
 ## CONTEXT NOTES:
-[CLAUDE MUST PROVIDE CONTEXT FOR CONTINUING WORK]
+
+**Database Consolidation Context**:
+- We're merging TWO databases with DIFFERENT content (not duplicates)
+- Only 57 tasks overlap (0.2%) - the rest are unique to each database
+- quantum-index.db (27,855 tasks) is the TARGET because 6 scripts already point to it
+- quantum-todo.db (25,612 tasks) is the SOURCE being merged in
+- User corrected our initial plan: "i don't understand how you are calling the db with the most content the legacy when all scripts are pointing to it"
+- Schema mismatch discovered during merge attempt: 32 vs 29 columns
+
+**Safety Measures in Place**:
+- All 14 commits pushed to GitHub (origin/database-consolidation-20251207)
+- 4-level rollback system: backups (507MB) + Git version control
+- Pre-merge integrity checks passed on both databases
+- User explicitly requested: "YES 1-3 WITH SAFETY AND ROLLBACK PLANNING"
+
+**User Feedback to Remember**:
+- "before you fuck this up, confirm that everything was deployed to github" - Always push immediately
+- "WAIT FOR ME" - User wants to review schema migration strategy before proceeding
+- "I SAID THE ENTIRE SCROLLBACK TERMINAL BUFFER I WAS CLEAR" - TMUX capture is broken
+- "only stop the daemons in this session and not the other concurrent sessions" - Session-specific operations
+
+**Critical Files for Continuation**:
+- DATABASE_MERGE_PLAN_FINAL_20251207.md - Full 10-phase merge plan
+- DATABASE_DEPENDENCY_MAP_COMPLETE_20251207.md - 543 lines showing all dependencies
+- SESSION_COMPLETION_REPORT_2025-12-07_COMPREHENSIVE.md - Master reference (543 lines)
+- All work documented and pushed to GitHub for safety
