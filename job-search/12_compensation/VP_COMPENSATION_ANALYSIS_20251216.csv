@@ -1,0 +1,18 @@
+Company,Role_Title,Base_Salary,Equity_4yr,Signing_Bonus,Total_Year_1,Level,Stage,Location,Remote_Policy
+Anthropic,Staff Engineer - AI Infrastructure,240000,400000,750000,1090000,L6,Series C,SF,Hybrid
+OpenAI,Staff Engineer - Developer Platform,260000,500000,1000000,1385000,L6,Late Stage,SF,Hybrid
+Scale AI,Staff ML Engineer,250000,450000,800000,1162500,L6,Series E,SF,Hybrid
+Hugging Face,Staff Engineer - Developer Experience,230000,300000,600000,905000,L6,Series C,Remote,Full Remote
+Vercel,Staff Engineer - AI/ML Platform,240000,350000,500000,827500,L6,Series C,SF,Hybrid
+Replit,Staff Engineer - AI Infrastructure,220000,400000,500000,820000,L5-L6,Series B,SF/Remote,Hybrid
+Cursor,Founding Engineer,200000,800000,500000,900000,L6,Seed,Remote,Full Remote
+Jasper,Staff Engineer - Content Generation,230000,350000,600000,917500,L6,Late Stage,Austin,Hybrid
+Copy.ai,Staff/Principal Engineer,220000,250000,400000,682500,L6,Series B,Remote,Full Remote
+Glean,Staff Engineer - Enterprise Platform,250000,400000,600000,950000,L6,Series D,SF,Hybrid
+GitHub,Staff Engineer,240000,400000,600000,940000,L65,Public,SF/Remote,Hybrid
+Notion,Staff Engineer - Platform,240000,350000,500000,827500,L6,Series C,SF,Hybrid
+Rippling,Staff Engineer - HR Platform,240000,350000,500000,827500,L6,Series D,SF,Hybrid
+Market_Average_AI_Startups,Staff/Principal Engineer,233000,340000,525000,843000,L6,Series A-D,Varies,Hybrid
+Victoria_Target_Conservative,Staff Engineer,180000,200000,500000,730000,L6,Any,Remote,Remote/Hybrid
+Victoria_Target_Realistic,Staff/Principal Engineer,220000,300000,750000,1045000,L6,Any,Remote,Remote/Hybrid
+Victoria_Target_Optimistic,Principal Engineer,250000,500000,1000000,1375000,L7,Well-Funded,Remote,Remote/Hybrid
