@@ -1,0 +1,93 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251128_224912_167",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 8,
+    "screenshots": [
+      {
+        "filename": "Screenshot (3886).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3886).png",
+        "timestamp": "2025-11-28 22:49:12",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot (3887).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3887).png",
+        "timestamp": "2025-11-28 22:49:20",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (3888).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3888).png",
+        "timestamp": "2025-11-28 22:49:25",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (3889).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3889).png",
+        "timestamp": "2025-11-28 22:49:34",
+        "part_number": 4
+      },
+      {
+        "filename": "Screenshot (3890).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3890).png",
+        "timestamp": "2025-11-28 22:49:41",
+        "part_number": 5
+      },
+      {
+        "filename": "Screenshot (3891).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3891).png",
+        "timestamp": "2025-11-28 22:49:53",
+        "part_number": 6
+      },
+      {
+        "filename": "Screenshot (3892).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3892).png",
+        "timestamp": "2025-11-28 22:50:05",
+        "part_number": 7
+      },
+      {
+        "filename": "Screenshot (3893).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3893).png",
+        "timestamp": "2025-11-28 22:50:11",
+        "part_number": 8
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 8 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

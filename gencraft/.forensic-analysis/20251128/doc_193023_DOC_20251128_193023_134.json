@@ -1,0 +1,51 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251128_193023_134",
+    "document_title": "VIBE CODING SOLID CODING ENFORCEMENT",
+    "is_multipart": false,
+    "total_parts": 1,
+    "screenshots": [
+      {
+        "filename": "VIBE CODING SOLID CODING ENFORCEMENT Screenshot 2025-11-28 192928.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/VIBE CODING SOLID CODING ENFORCEMENT Screenshot 2025-11-28 192928.png",
+        "timestamp": "2025-11-28 19:30:23",
+        "part_number": 1
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 1 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

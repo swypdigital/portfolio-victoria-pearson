@@ -1,0 +1,57 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251130_163432_224",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 2,
+    "screenshots": [
+      {
+        "filename": "Screenshot 2025-11-30 163431.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot 2025-11-30 163431.png",
+        "timestamp": "2025-11-30 16:34:32",
+        "part_number": 1
+      },
+      {
+        "filename": "CLAUDE CODE GENCRAFT V3 VERTICALS AND OVERLAYS LIST Screenshot 2025-11-30 163431.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT V3 VERTICALS AND OVERLAYS LIST Screenshot 2025-11-30 163431.png",
+        "timestamp": "2025-11-30 16:35:01",
+        "part_number": 2
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 2 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

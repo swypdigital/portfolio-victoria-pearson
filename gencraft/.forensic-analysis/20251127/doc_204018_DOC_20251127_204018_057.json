@@ -1,0 +1,81 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251127_204018_057",
+    "document_title": "CLAUDE CODE GENCRAFT BUILD PROGRESS UI DASHBOARD",
+    "is_multipart": true,
+    "total_parts": 6,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE GENCRAFT BUILD PROGRESS UI DASHBOARD  Screenshot 2025-11-27 203904.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT BUILD PROGRESS UI DASHBOARD  Screenshot 2025-11-27 203904.png",
+        "timestamp": "2025-11-27 20:40:18",
+        "part_number": 1
+      },
+      {
+        "filename": "CLAUDE CODE GENCRAFT BUILD PROGRESS SUPERADMIN UI DASHBOARD  Screenshot 2025-11-27 203904.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT BUILD PROGRESS SUPERADMIN UI DASHBOARD  Screenshot 2025-11-27 203904.png",
+        "timestamp": "2025-11-27 20:40:37",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (3677).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3677).png",
+        "timestamp": "2025-11-27 20:40:46",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (3678).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3678).png",
+        "timestamp": "2025-11-27 20:40:57",
+        "part_number": 4
+      },
+      {
+        "filename": "Screenshot (3679).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3679).png",
+        "timestamp": "2025-11-27 20:41:03",
+        "part_number": 5
+      },
+      {
+        "filename": "Screenshot (3680).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3680).png",
+        "timestamp": "2025-11-27 20:41:15",
+        "part_number": 6
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 6 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

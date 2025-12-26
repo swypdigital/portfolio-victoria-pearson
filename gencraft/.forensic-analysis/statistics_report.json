@@ -1,0 +1,53 @@
+{
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "total_screenshots": 783,
+  "total_documents": 300,
+  "multipart_documents": 117,
+  "single_documents": 183,
+  "date_range": {
+    "start": "2025-11-25 11:12:02",
+    "end": "2025-12-02 02:03:51"
+  },
+  "by_date": {
+    "2025-11-25": {
+      "screenshots": 14,
+      "documents": 11,
+      "multipart": 2
+    },
+    "2025-11-26": {
+      "screenshots": 5,
+      "documents": 3,
+      "multipart": 1
+    },
+    "2025-11-27": {
+      "screenshots": 198,
+      "documents": 53,
+      "multipart": 19
+    },
+    "2025-11-28": {
+      "screenshots": 269,
+      "documents": 110,
+      "multipart": 47
+    },
+    "2025-11-29": {
+      "screenshots": 36,
+      "documents": 19,
+      "multipart": 7
+    },
+    "2025-11-30": {
+      "screenshots": 125,
+      "documents": 57,
+      "multipart": 20
+    },
+    "2025-12-01": {
+      "screenshots": 121,
+      "documents": 43,
+      "multipart": 19
+    },
+    "2025-12-02": {
+      "screenshots": 15,
+      "documents": 4,
+      "multipart": 2
+    }
+  }
+}

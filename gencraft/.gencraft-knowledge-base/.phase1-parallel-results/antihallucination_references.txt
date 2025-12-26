@@ -1,0 +1,20 @@
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:● Read(frameworks/enterprise-anti-hallucination-framework.md)
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:        "frameworks/enterprise-anti-hallucination-framework.md")
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:● Read(frameworks/enterprise-anti-hallucination-framework.md)
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:        "frameworks/enterprise-anti-hallucination-framework.md")
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:● Bash(cd /mnt/c/Users/jdh/claude_projects/frameworks && grep -n "Testing & Validation" enterprise-anti-hallucination-framework.md | head
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:● Read(frameworks/enterprise-anti-hallucination-framework.md)
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:  enterprise-anti-hallucination-framework.md and UMF quality assurance documents.
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:  ⎿  Read frameworks/enterprise-anti-hallucination-framework.md (100+ lines)
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:     │ - Integrate security testing framework from enterprise-anti-hallucination-framework.md                           │
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-17/PLAN_CAPTURED_20250917_232155.md:     │   - Import security validation from enterprise-anti-hallucination-framework.md                                                │
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:  - **Filename:** enterprise-anti-hallucination-framework.md
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:  **Artifact ID:** adaptive-anti-hallucination-framework-v4-0-0
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:  find ~ -name "*anti-hallucination-framework*.md" -type f
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:  # Upload: enterprise-anti-hallucination-framework.md
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:          "filename": "enterprise-anti-hallucination-framework.md",
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:  locate "anti-hallucination-framework"
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:     - **enterprise-anti-hallucination-framework.md** (Found and copied)
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:     GROKLY  GROUP/-        FRAMEWORKS/enterprise-anti-hallucination-framework-v4-0-0.md': No such file or directory
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:        17    ✅ **enterprise-anti-hallucination-framework.md**
+/mnt/c/Users/jdh/claude_projects/.accepted-plans/2025-09-26/PLAN_CAPTURED_20250926_061830.md:  filename: "enterprise-anti-hallucination-framework.md"

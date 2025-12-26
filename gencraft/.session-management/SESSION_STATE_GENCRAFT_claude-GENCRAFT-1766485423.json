@@ -1,0 +1,36 @@
+{
+  "session_id": "claude-GENCRAFT-1766485423",
+  "end_time": "2025-12-23T12:40:09Z",
+  "end_time_pdt": "2025-12-23 04:40:09 PDT",
+  "project": "GENCRAFT",
+  "working_directory": "/mnt/c/Users/jdh/claude_projects",
+  "tmux_active": true,
+  "tmux_session": "null",
+  "chat_lines": 281,
+  "last_files": [
+  "CHAT_BACKUPS",
+  "SESSION_END_SUMMARY_20251223_044003_FINAL.txt",
+  "CHAT_SESSION_SCROLLBACK_20251223_044003_TMUX-COMPLETE_281_LINES.txt",
+  "SESSION_DEPENDENCIES_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "TODO_NEXT_SESSION_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "END_SESSION_REPORT_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "CHAT_SESSION_END_BACKUP_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "NEXT_SESSION_INSTRUCTIONS_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "SESSION_STATE_GENCRAFT_claude-GENCRAFT-1766485423.json",
+  "UNIVERSAL_TODO_LIST.md"
+],
+  "handoff_package": "/mnt/c/Users/jdh/claude_projects/.session-management/SESSION_HANDOFF_20251223_044009.json",
+  "todo_file": "TODO_NEXT_SESSION_claude-GENCRAFT-1766485423.md",
+  "instructions_file": "NEXT_SESSION_INSTRUCTIONS_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "end_report": "END_SESSION_REPORT_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "chat_backup": "/mnt/c/Users/jdh/claude_projects/CHAT_SESSION_END_BACKUP_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "dependencies_file": "SESSION_DEPENDENCIES_GENCRAFT_claude-GENCRAFT-1766485423.md",
+  "execution_time": "optimized",
+  "claude_must_complete": {
+    "session_summary": false,
+    "files_modified": false,
+    "pending_tasks": false,
+    "dependencies": false,
+    "critical_notes": false
+  }
+}

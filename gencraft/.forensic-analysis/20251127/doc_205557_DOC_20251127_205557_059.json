@@ -1,0 +1,51 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251127_205557_059",
+    "document_title": "CLAUDE CODE GENRAFT",
+    "is_multipart": false,
+    "total_parts": 1,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE GENRAFT Screenshot 2025-11-27 204644.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENRAFT Screenshot 2025-11-27 204644.png",
+        "timestamp": "2025-11-27 20:55:57",
+        "part_number": 1
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 1 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

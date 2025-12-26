@@ -1,0 +1,57 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251201_014204_264",
+    "document_title": "CLAUDE CODE GENCRAFT V3 AGENT ARCHITECTURE KNOW WHAT YOU WANT",
+    "is_multipart": true,
+    "total_parts": 2,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE GENCRAFT V3 AGENT ARCHITECTURE KNOW WHAT YOU WANT Screenshot 2025-12-01 014047.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT V3 AGENT ARCHITECTURE KNOW WHAT YOU WANT Screenshot 2025-12-01 014047.png",
+        "timestamp": "2025-12-01 01:42:04",
+        "part_number": 1
+      },
+      {
+        "filename": "VIBE CODING GENCRAFT V3 AGENT ARCHITECTURE KNOW WHAT YOU WANT Screenshot 2025-12-01 014047.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/VIBE CODING GENCRAFT V3 AGENT ARCHITECTURE KNOW WHAT YOU WANT Screenshot 2025-12-01 014047.png",
+        "timestamp": "2025-12-01 01:42:20",
+        "part_number": 2
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 2 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

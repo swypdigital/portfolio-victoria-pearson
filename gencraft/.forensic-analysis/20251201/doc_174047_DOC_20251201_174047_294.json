@@ -1,0 +1,51 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251201_174047_294",
+    "document_title": "CLAUDE CODE SECURITY RISK OPEN SOURCE LOCAL MODELS DEEPSEEK",
+    "is_multipart": false,
+    "total_parts": 1,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE SECURITY RISK OPEN SOURCE LOCAL MODELS DEEPSEEK Screenshot 2025-12-01 173838.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE SECURITY RISK OPEN SOURCE LOCAL MODELS DEEPSEEK Screenshot 2025-12-01 173838.png",
+        "timestamp": "2025-12-01 17:40:47",
+        "part_number": 1
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 1 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

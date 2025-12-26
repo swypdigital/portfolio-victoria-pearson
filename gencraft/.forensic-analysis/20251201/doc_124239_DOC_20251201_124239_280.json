@@ -1,0 +1,69 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251201_124239_280",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 4,
+    "screenshots": [
+      {
+        "filename": "Screenshot (4079).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4079).png",
+        "timestamp": "2025-12-01 12:42:39",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot (4080).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4080).png",
+        "timestamp": "2025-12-01 12:42:47",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (4081).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4081).png",
+        "timestamp": "2025-12-01 12:42:53",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (4082).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4082).png",
+        "timestamp": "2025-12-01 12:42:58",
+        "part_number": 4
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 4 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

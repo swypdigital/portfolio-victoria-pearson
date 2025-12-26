@@ -1,0 +1,14 @@
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/.rollback/indexing-20250806-040727/extraction-state/universal-library/system-instructions/domain-specific/20250626_213802_0364_FRAMEWORK ANTI HALLUCINATION anti-hallucination-framework.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/.rollback/indexing-20250806-040727/extraction-state/universal-library/system-instructions/domain-specific/20250626_215319_0244_MASTER FRAMEWORK ANTI HALLUCINATION anti-hallucinationk.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/frameworks/contractual-anti-hallucination-resolver.sh
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/frameworks/enterprise-anti-hallucination-framework-v5.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/frameworks/enterprise-anti-hallucination-framework-v6.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/frameworks/enterprise-anti-hallucination-framework.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/localgpt/FRAMEWORK ANTI HALLUCINATION anti-hallucination-framework.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/persistent_memory/documents/96f6dba686e4_1752108601206343291_claude_projects_localgpt_FRAMEWORK_ANTI_HALLUCINATION_anti-hallucination-framework.md.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/persistent_memory/documents/96f6dba686e4_1752108601211111998_claude_projects_localgpt_FRAMEWORK_ANTI_HALLUCINATION_anti-hallucination-framework.md.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/persistent_memory/documents/96f6dba686e4_1752112378979155047_claude_projects_localgpt_FRAMEWORK_ANTI_HALLUCINATION_anti-hallucination-framework.md.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/_snapshots/%TS%/.rollback/indexing-20250806-040727/extraction-state/universal-library/system-instructions/domain-specific/20250626_213802_0364_FRAMEWORK ANTI HALLUCINATION anti-hallucination-framework.md
+/mnt/c/Users/jdh/claude_projects/.repair-snapshots/20251120_204830/windows_mirror_backup/_snapshots/%TS%/.rollback/indexing-20250806-040727/extraction-state/universal-library/system-instructions/domain-specific/20250626_215319_0244_MASTER FRAMEWORK ANTI HALLUCINATION anti-hallucinationk.md
+/mnt/c/Users/jdh/claude_projects/gencraft-v3.0/.gencraft-knowledge-base/.phase1-parallel-results/antihallucination_files.txt
+/mnt/c/Users/jdh/claude_projects/gencraft-v3.0/.gencraft-knowledge-base/.phase1-parallel-results/worker1_antihallucination.log

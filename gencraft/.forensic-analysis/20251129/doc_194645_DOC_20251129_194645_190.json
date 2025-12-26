@@ -1,0 +1,75 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251129_194645_190",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 5,
+    "screenshots": [
+      {
+        "filename": "Screenshot (3912).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3912).png",
+        "timestamp": "2025-11-29 19:46:45",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot (3913).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3913).png",
+        "timestamp": "2025-11-29 19:46:59",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (3914).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3914).png",
+        "timestamp": "2025-11-29 19:47:26",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (3915).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3915).png",
+        "timestamp": "2025-11-29 19:47:38",
+        "part_number": 4
+      },
+      {
+        "filename": "Screenshot (3916).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3916).png",
+        "timestamp": "2025-11-29 19:47:46",
+        "part_number": 5
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 5 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

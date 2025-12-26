@@ -1,0 +1,81 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251201_040450_276",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 6,
+    "screenshots": [
+      {
+        "filename": "Screenshot (4067).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4067).png",
+        "timestamp": "2025-12-01 04:04:50",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot (4068).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4068).png",
+        "timestamp": "2025-12-01 04:05:03",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (4069).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4069).png",
+        "timestamp": "2025-12-01 04:05:13",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (4070).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4070).png",
+        "timestamp": "2025-12-01 04:05:19",
+        "part_number": 4
+      },
+      {
+        "filename": "Screenshot (4071).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4071).png",
+        "timestamp": "2025-12-01 04:05:29",
+        "part_number": 5
+      },
+      {
+        "filename": "Screenshot (4072).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (4072).png",
+        "timestamp": "2025-12-01 04:05:41",
+        "part_number": 6
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 6 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

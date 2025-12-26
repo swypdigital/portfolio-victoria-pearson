@@ -1,0 +1,51 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251201_013347_260",
+    "document_title": "CLAUDE CODE GENCRAFT V3 BUILD PLAN",
+    "is_multipart": false,
+    "total_parts": 1,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE GENCRAFT V3 BUILD PLAN Screenshot 2025-12-01 013254.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT V3 BUILD PLAN Screenshot 2025-12-01 013254.png",
+        "timestamp": "2025-12-01 01:33:47",
+        "part_number": 1
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 1 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251129_192910_188",
+    "document_title": "CLAUDE CODE GENCRAFT V3 REBUILD PLAN",
+    "is_multipart": true,
+    "total_parts": 4,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE GENCRAFT V3 REBUILD PLAN Screenshot 2025-11-29 192744.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT V3 REBUILD PLAN Screenshot 2025-11-29 192744.png",
+        "timestamp": "2025-11-29 19:29:10",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot (3908).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3908).png",
+        "timestamp": "2025-11-29 19:29:32",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (3909).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3909).png",
+        "timestamp": "2025-11-29 19:29:37",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (3910).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3910).png",
+        "timestamp": "2025-11-29 19:29:40",
+        "part_number": 4
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 4 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

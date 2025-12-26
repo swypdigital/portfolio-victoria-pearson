@@ -1,0 +1,17 @@
+GenCraft API - Rollback Snapshot
+Created: Fri Dec 26 08:20:45 PST 2025
+Snapshot ID: 20251226_081636
+
+Contents:
+- Database: NO
+- Logs: NO
+- .env: NO
+- Git status: YES
+
+Rollback Instructions:
+1. Run: ./tests/rollback.sh 20251226_081636
+2. This will restore all backed up files
+3. Database and logs will be replaced
+4. Git state will be shown for manual review
+
+DO NOT DELETE THIS DIRECTORY UNTIL TESTING COMPLETE

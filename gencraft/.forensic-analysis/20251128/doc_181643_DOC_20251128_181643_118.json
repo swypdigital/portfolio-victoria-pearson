@@ -1,0 +1,57 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251128_181643_118",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 2,
+    "screenshots": [
+      {
+        "filename": "Screenshot (3830).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3830).png",
+        "timestamp": "2025-11-28 18:16:43",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot 2025-11-28 181657.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot 2025-11-28 181657.png",
+        "timestamp": "2025-11-28 18:16:57",
+        "part_number": 2
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 2 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

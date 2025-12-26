@@ -1,0 +1,81 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251129_142806_186",
+    "document_title": "CLAUDE CODE GENCRAFT LIST OF 20 ENGINES",
+    "is_multipart": true,
+    "total_parts": 6,
+    "screenshots": [
+      {
+        "filename": "CLAUDE CODE GENCRAFT LIST OF 20 ENGINES Screenshot 2025-11-29 142722.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE GENCRAFT LIST OF 20 ENGINES Screenshot 2025-11-29 142722.png",
+        "timestamp": "2025-11-29 14:28:06",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot (3902).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3902).png",
+        "timestamp": "2025-11-29 14:28:25",
+        "part_number": 2
+      },
+      {
+        "filename": "Screenshot (3903).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3903).png",
+        "timestamp": "2025-11-29 14:28:33",
+        "part_number": 3
+      },
+      {
+        "filename": "Screenshot (3904).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3904).png",
+        "timestamp": "2025-11-29 14:28:38",
+        "part_number": 4
+      },
+      {
+        "filename": "Screenshot (3905).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3905).png",
+        "timestamp": "2025-11-29 14:28:44",
+        "part_number": 5
+      },
+      {
+        "filename": "Screenshot (3906).png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot (3906).png",
+        "timestamp": "2025-11-29 14:28:51",
+        "part_number": 6
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 6 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "document_metadata": {
+    "document_id": "DOC_20251130_233931_252",
+    "document_title": "",
+    "is_multipart": true,
+    "total_parts": 3,
+    "screenshots": [
+      {
+        "filename": "Screenshot 2025-11-30 233931.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot 2025-11-30 233931.png",
+        "timestamp": "2025-11-30 23:39:31",
+        "part_number": 1
+      },
+      {
+        "filename": "Screenshot 2025-11-30 233957.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/Screenshot 2025-11-30 233957.png",
+        "timestamp": "2025-11-30 23:39:58",
+        "part_number": 2
+      },
+      {
+        "filename": "CLAUDE CODE KNOW YOUR SYSTEM Screenshot 2025-11-30 233957.png",
+        "filepath": "/mnt/c/Users/jdh/OneDrive - purneeds.com/Pictures/Screenshots/CLAUDE CODE KNOW YOUR SYSTEM Screenshot 2025-11-30 233957.png",
+        "timestamp": "2025-11-30 23:40:20",
+        "part_number": 3
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-12-02 03:16:28",
+  "extracted_content": {
+    "full_text": "[Content from 3 screenshot(s) - requires vision analysis]",
+    "architecture": {
+      "components": [],
+      "services": [],
+      "engines": [],
+      "integrations": [],
+      "tech_stack": []
+    },
+    "requirements": {
+      "functional": [],
+      "non_functional": []
+    },
+    "security": {
+      "measures": [],
+      "deadlines": [],
+      "threats": []
+    },
+    "code_snippets": [],
+    "decisions": [],
+    "scope": {
+      "verticals": [],
+      "overlays": [],
+      "capabilities": [],
+      "languages": ""
+    },
+    "pain_points": [],
+    "timeline": {
+      "phases": [],
+      "total_weeks": 0,
+      "critical_milestones": []
+    },
+    "user_instructions": []
+  }
+}
