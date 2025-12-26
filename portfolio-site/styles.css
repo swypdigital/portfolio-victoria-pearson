@@ -255,6 +255,35 @@ p {
 body.light-theme .sun-icon { display: none; }
 body:not(.light-theme) .moon-icon { display: none; }
 
+/* Top Highlight Banner - Phase 1.1 Addition */
+.top-banner {
+    background: var(--gradient-primary);
+    padding: var(--space-3) 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 999;
+}
+
+.banner-scroll {
+    display: flex;
+    animation: scroll-left 30s linear infinite;
+}
+
+.banner-text {
+    white-space: nowrap;
+    padding: 0 var(--space-4);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -776,6 +805,42 @@ body:not(.light-theme) .moon-icon { display: none; }
     font-size: var(--font-size-3xl);
 }
 
+/* Contact Section Enhancements - Phase 1.5 */
+.security-note {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: rgba(51, 156, 255, 0.05);
+    border: 1px solid rgba(51, 156, 255, 0.2);
+    border-radius: var(--radius-xl);
+    color: var(--text-secondary);
+    text-shadow: var(--text-shadow-subtle);
+}
+
+.security-note strong {
+    color: var(--electric-blue);
+    text-shadow: var(--text-shadow-medium);
+}
+
+.availability-note {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    text-align: left;
+}
+
+.availability-note p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+    text-shadow: var(--text-shadow-subtle);
+}
+
+.availability-note strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 /* Footer */
 .footer {
     background: var(--bg-secondary);
@@ -829,6 +894,17 @@ body:not(.light-theme) .moon-icon { display: none; }
         display: none;
     }
 
+    /* Top Banner - Mobile Optimization */
+    .banner-text {
+        font-size: var(--font-size-xs);
+        letter-spacing: 0.5px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding-top: 100px; /* Account for top banner */
+    }
+
     .hero-title {
         font-size: var(--font-size-4xl);
     }
@@ -837,14 +913,26 @@ body:not(.light-theme) .moon-icon { display: none; }
         font-size: var(--font-size-xl);
     }
 
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+
+    /* Stats Grid */
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Projects Grid */
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Skills Grid */
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Timeline */
     .timeline::before {
         left: 20px;
     }
@@ -859,8 +947,51 @@ body:not(.light-theme) .moon-icon { display: none; }
         left: -30px;
     }
 
+    /* Contact Section */
     .contact-links {
         flex-direction: column;
         align-items: center;
+    }
+
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .security-note,
+    .availability-note {
+        padding: var(--space-4);
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small devices */
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: var(--space-6);
+    }
+
+    .project-card {
+        padding: var(--space-6);
+    }
+
+    .contact-list li {
+        font-size: var(--font-size-sm);
     }
 }
