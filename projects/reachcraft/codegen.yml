@@ -1,0 +1,46 @@
+# GraphQL Code Generation Configuration
+# Generates TypeScript types from schema.graphql
+
+overwrite: true
+schema: "./schema.graphql"
+generates:
+  # Server-side types for Team 2 (Backend API)
+  ./src/types/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      useIndexSignature: true
+      contextType: ../context#GraphQLContext
+      scalars:
+        DateTime: Date
+        JSON: Record<string, any>
+        UUID: string
+        URL: string
+        EmailAddress: string
+        PhoneNumber: string
+        Money: number
+
+  # Client-side types for Team 3 (Frontend UI)
+  ./src/types/graphql-client.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      withHOC: false
+      withComponent: false
+      scalars:
+        DateTime: string
+        JSON: Record<string, any>
+        UUID: string
+        URL: string
+        EmailAddress: string
+        PhoneNumber: string
+        Money: number
+
+  # Introspection file for Team 3 (Frontend mock server)
+  ./schema.json:
+    plugins:
+      - introspection

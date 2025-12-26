@@ -1,0 +1,1002 @@
+# ReachCraft GraphQL Schema v1.0.0
+# Master schema for all 6 parallel teams
+# Generated: 2025-12-25
+# Teams: Infrastructure, Backend API, Frontend UI, AI Engine, Browser Extension, Marketplace
+
+# ============================================
+# SCALARS & ENUMS
+# ============================================
+
+scalar DateTime
+scalar JSON
+scalar UUID
+scalar URL
+scalar EmailAddress
+scalar PhoneNumber
+scalar Money
+
+enum UserRole {
+  GOD           # Platform administrator
+  ADMIN         # Organization admin
+  MANAGER       # Team manager
+  USER          # Regular user
+  VIEWER        # Read-only access
+}
+
+enum ContactSource {
+  MANUAL        # Manually added
+  BROWSER       # Browser extension
+  CSV_IMPORT    # Bulk import
+  API           # API integration
+  SOCIAL_SYNC   # Social platform sync
+  AI_SCRAPING   # Auto-scraped
+  MARKETPLACE   # Purchased from marketplace
+}
+
+enum ContactCategory {
+  PROSPECT      # Potential customer
+  CUSTOMER      # Active customer
+  CHURNED       # Lost customer
+  COMPETITOR    # Competitor contact
+  PARTNER       # Partner/vendor
+  INVESTOR      # Investor/advisor
+  INFLUENCER    # Industry influencer
+  EMPLOYEE      # Internal team
+}
+
+enum LeadScore {
+  HOT           # 80-100 score
+  WARM          # 60-79 score
+  COOL          # 40-59 score
+  COLD          # 0-39 score
+}
+
+enum BuyerStage {
+  UNAWARE       # Not aware of problem
+  PROBLEM_AWARE # Aware of problem
+  SOLUTION_AWARE # Researching solutions
+  EVALUATION    # Evaluating vendors
+  DECISION      # Making decision
+  CUSTOMER      # Already a customer
+}
+
+enum IntentSignal {
+  HIGH          # Strong buying signals
+  MEDIUM        # Moderate interest
+  LOW           # Minimal signals
+  NONE          # No signals detected
+}
+
+enum VerticalType {
+  RECRUITING    # ReachCraft PRO
+  SALES         # ReachCraft SALES
+  CREATOR       # ReachCraft CREATOR
+  MEDIA         # ReachCraft MEDIA
+  FUNDRAISING   # ReachCraft FUNDRAISE
+  AGENCY        # ReachCraft AGENCY
+  SOCIAL        # ReachCraft SOCIAL
+  CORPORATE     # ReachCraft CORPORATE
+}
+
+enum EnrichmentStatus {
+  PENDING       # Awaiting enrichment
+  PROCESSING    # Currently enriching
+  COMPLETED     # Fully enriched
+  FAILED        # Enrichment failed
+  PARTIAL       # Partially enriched
+}
+
+enum MarketplaceStatus {
+  DRAFT         # Not yet listed
+  ACTIVE        # Available for sale
+  SOLD          # Already sold
+  EXPIRED       # Listing expired
+  REMOVED       # Manually removed
+}
+
+enum SubscriptionTier {
+  FREE          # $0/month
+  STARTER       # $29/month
+  PROFESSIONAL  # $99/month
+  BUSINESS      # $299/month
+  ENTERPRISE    # $500+/month
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum WebhookEvent {
+  CONTACT_CREATED
+  CONTACT_UPDATED
+  CONTACT_ENRICHED
+  LEAD_SCORED
+  LEAD_PURCHASED
+  TEAM_INVITED
+  SUBSCRIPTION_CHANGED
+}
+
+# ============================================
+# CORE TYPES
+# ============================================
+
+type Organization {
+  id: UUID!
+  name: String!
+  domain: String!
+  logoUrl: URL
+  subscription: Subscription!
+  users: [User!]!
+  contacts: ContactConnection!
+  teams: [Team!]!
+  apiKeys: [ApiKey!]!
+  webhooks: [Webhook!]!
+  verticalConfig: VerticalConfig!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  # Metrics
+  totalContacts: Int!
+  monthlyActiveUsers: Int!
+  apiCallsThisMonth: Int!
+  storageUsedGB: Float!
+}
+
+type Team {
+  id: UUID!
+  organization: Organization!
+  name: String!
+  description: String
+  members: [User!]!
+  contacts: ContactConnection!
+  lists: [ContactList!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type User {
+  id: UUID!
+  email: EmailAddress!
+  name: String!
+  avatarUrl: URL
+  role: UserRole!
+  organization: Organization!
+  teams: [Team!]!
+  contacts: ContactConnection!
+  lists: [ContactList!]!
+  activities: ActivityConnection!
+  notifications: [Notification!]!
+  preferences: UserPreferences!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  lastLoginAt: DateTime
+
+  # OAuth connections
+  socialAccounts: [SocialAccount!]!
+}
+
+type UserPreferences {
+  id: UUID!
+  user: User!
+  emailNotifications: Boolean!
+  browserNotifications: Boolean!
+  autoEnrichContacts: Boolean!
+  defaultVertical: VerticalType!
+  timezone: String!
+  language: String!
+}
+
+# ============================================
+# CONTACT MANAGEMENT
+# ============================================
+
+type Contact {
+  id: UUID!
+  organization: Organization!
+
+  # Basic Information
+  firstName: String
+  lastName: String
+  fullName: String!
+  email: EmailAddress
+  phone: PhoneNumber
+  title: String
+  company: String
+  website: URL
+  location: String
+  timezone: String
+  avatarUrl: URL
+
+  # Classification
+  category: ContactCategory!
+  source: ContactSource!
+  vertical: VerticalType!
+  tags: [String!]!
+  customFields: JSON
+
+  # Enrichment Data
+  enrichmentStatus: EnrichmentStatus!
+  enrichmentData: EnrichmentData
+  socialProfiles: [SocialProfile!]!
+
+  # AI Analysis
+  leadScore: Int!          # 0-100
+  leadScoreCategory: LeadScore!
+  buyerStage: BuyerStage!
+  intentSignals: [IntentSignalData!]!
+  predictedValue: Money
+  conversionProbability: Float!
+
+  # Relationships
+  lists: [ContactList!]!
+  notes: [Note!]!
+  activities: [Activity!]!
+  tasks: [Task!]!
+
+  # Marketplace
+  marketplaceListing: MarketplaceListing
+
+  # Metadata
+  createdBy: User!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  lastActivityAt: DateTime
+  lastEnrichedAt: DateTime
+}
+
+type EnrichmentData {
+  id: UUID!
+  contact: Contact!
+
+  # Company Data
+  companySize: String
+  companyRevenue: String
+  companyIndustry: String
+  companyFunding: String
+  companyTechnologies: [String!]!
+
+  # Personal Data
+  biography: String
+  skills: [String!]!
+  education: [Education!]!
+  experience: [Experience!]!
+
+  # Social Data
+  twitterFollowers: Int
+  linkedinConnections: Int
+  githubRepos: Int
+
+  # Behavioral Data
+  contentEngagement: JSON
+  websiteVisits: JSON
+  emailOpens: Int
+
+  enrichedAt: DateTime!
+  dataSource: String!
+}
+
+type SocialProfile {
+  id: UUID!
+  platform: String!      # LinkedIn, Twitter, GitHub, etc.
+  profileUrl: URL!
+  username: String
+  followers: Int
+  verified: Boolean!
+  lastSyncedAt: DateTime
+}
+
+type Education {
+  school: String!
+  degree: String
+  field: String
+  startYear: Int
+  endYear: Int
+}
+
+type Experience {
+  company: String!
+  title: String!
+  description: String
+  startDate: DateTime
+  endDate: DateTime
+  isCurrent: Boolean!
+}
+
+type IntentSignalData {
+  id: UUID!
+  type: String!         # website_visit, content_download, email_open, etc.
+  strength: IntentSignal!
+  description: String!
+  detectedAt: DateTime!
+  metadata: JSON
+}
+
+# ============================================
+# CONTACT LISTS & SEGMENTS
+# ============================================
+
+type ContactList {
+  id: UUID!
+  name: String!
+  description: String
+  organization: Organization!
+  owner: User!
+  contacts: ContactConnection!
+  sharedWith: [User!]!
+  isPublic: Boolean!
+  isDynamic: Boolean!    # Auto-updating based on filters
+  filters: JSON         # Dynamic list criteria
+
+  # Viral features
+  shareUrl: URL         # Public sharing link
+  embedCode: String     # Embeddable widget
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ============================================
+# MARKETPLACE
+# ============================================
+
+type MarketplaceListing {
+  id: UUID!
+  contact: Contact!
+  seller: User!
+
+  # Listing Details
+  price: Money!
+  title: String!
+  description: String!
+  category: ContactCategory!
+  vertical: VerticalType!
+
+  # Status
+  status: MarketplaceStatus!
+  views: Int!
+
+  # Purchase Info
+  purchases: [MarketplacePurchase!]!
+
+  # Metadata
+  listedAt: DateTime!
+  expiresAt: DateTime
+  soldAt: DateTime
+}
+
+type MarketplacePurchase {
+  id: UUID!
+  listing: MarketplaceListing!
+  buyer: User!
+  price: Money!
+
+  # Revenue Share
+  sellerRevenue: Money!
+  platformFee: Money!
+
+  # Status
+  paymentStatus: PaymentStatus!
+  stripePaymentId: String!
+
+  purchasedAt: DateTime!
+}
+
+# ============================================
+# AUTOMATION & WORKFLOWS
+# ============================================
+
+type Workflow {
+  id: UUID!
+  name: String!
+  description: String
+  organization: Organization!
+
+  # Configuration
+  trigger: WorkflowTrigger!
+  actions: [WorkflowAction!]!
+  conditions: JSON
+
+  # Status
+  isActive: Boolean!
+  lastRunAt: DateTime
+  runCount: Int!
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type WorkflowTrigger {
+  id: UUID!
+  type: String!         # contact_created, lead_scored, etc.
+  configuration: JSON
+}
+
+type WorkflowAction {
+  id: UUID!
+  type: String!         # send_email, update_field, create_task, etc.
+  configuration: JSON
+  order: Int!
+}
+
+# ============================================
+# ACTIVITIES & ENGAGEMENT
+# ============================================
+
+type Activity {
+  id: UUID!
+  contact: Contact!
+  user: User!
+  type: String!         # email, call, meeting, note, etc.
+  subject: String!
+  description: String
+  metadata: JSON
+  occurredAt: DateTime!
+}
+
+type Note {
+  id: UUID!
+  contact: Contact!
+  author: User!
+  content: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Task {
+  id: UUID!
+  contact: Contact!
+  assignee: User!
+  title: String!
+  description: String
+  dueDate: DateTime
+  isCompleted: Boolean!
+  completedAt: DateTime
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ============================================
+# BROWSER EXTENSION
+# ============================================
+
+type BrowserSession {
+  id: UUID!
+  user: User!
+  extensionVersion: String!
+  browser: String!
+
+  # Capture Stats
+  capturesThisSession: Int!
+  platformsCapturedFrom: [String!]!
+
+  startedAt: DateTime!
+  lastActivityAt: DateTime!
+}
+
+type CatchFolder {
+  id: UUID!
+  user: User!
+  contacts: [Contact!]!
+  reviewedAt: DateTime
+  createdAt: DateTime!
+}
+
+# ============================================
+# SUBSCRIPTION & BILLING
+# ============================================
+
+type Subscription {
+  id: UUID!
+  organization: Organization!
+  tier: SubscriptionTier!
+
+  # Limits
+  contactLimit: Int!
+  userLimit: Int!
+  apiCallLimit: Int!
+  storageGB: Int!
+
+  # Billing
+  monthlyPrice: Money!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+
+  # Status
+  isActive: Boolean!
+  trialEndsAt: DateTime
+  currentPeriodEnd: DateTime
+  cancelledAt: DateTime
+}
+
+# ============================================
+# VERTICAL CONFIGURATION
+# ============================================
+
+type VerticalConfig {
+  id: UUID!
+  organization: Organization!
+  primaryVertical: VerticalType!
+  enabledVerticals: [VerticalType!]!
+
+  # Feature Flags
+  features: VerticalFeatures!
+
+  # Custom Fields
+  customContactFields: [CustomFieldDefinition!]!
+  customWorkflows: [Workflow!]!
+}
+
+type VerticalFeatures {
+  # Recruiting Features
+  resumeParsing: Boolean!
+  candidateTracking: Boolean!
+  interviewScheduling: Boolean!
+
+  # Sales Features
+  dealTracking: Boolean!
+  pipelineManagement: Boolean!
+  forecastingModule: Boolean!
+
+  # Creator Features
+  audienceAnalytics: Boolean!
+  contentCalendar: Boolean!
+  sponsorshipTracking: Boolean!
+
+  # Media Features
+  pressReleases: Boolean!
+  mediaKit: Boolean!
+  journalistOutreach: Boolean!
+
+  # Fundraising Features
+  investorCRM: Boolean!
+  pitchDeckTracking: Boolean!
+  capTable: Boolean!
+
+  # Agency Features
+  clientPortal: Boolean!
+  projectTracking: Boolean!
+  whiteLabeling: Boolean!
+}
+
+type CustomFieldDefinition {
+  id: UUID!
+  name: String!
+  fieldType: String!    # text, number, date, select, etc.
+  isRequired: Boolean!
+  options: [String!]    # For select fields
+  vertical: VerticalType!
+}
+
+# ============================================
+# NOTIFICATIONS & WEBHOOKS
+# ============================================
+
+type Notification {
+  id: UUID!
+  user: User!
+  type: String!
+  title: String!
+  message: String!
+  isRead: Boolean!
+  actionUrl: URL
+  createdAt: DateTime!
+}
+
+type Webhook {
+  id: UUID!
+  organization: Organization!
+  url: URL!
+  events: [WebhookEvent!]!
+  secret: String!
+  isActive: Boolean!
+  lastTriggeredAt: DateTime
+  failureCount: Int!
+  createdAt: DateTime!
+}
+
+type ApiKey {
+  id: UUID!
+  organization: Organization!
+  name: String!
+  key: String!
+  permissions: [String!]!
+  lastUsedAt: DateTime
+  expiresAt: DateTime
+  createdAt: DateTime!
+}
+
+# ============================================
+# SOCIAL ACCOUNTS (OAuth)
+# ============================================
+
+type SocialAccount {
+  id: UUID!
+  user: User!
+  platform: String!      # LinkedIn, Twitter, GitHub, etc.
+  accountId: String!
+  accountName: String!
+  accessToken: String!
+  refreshToken: String
+  tokenExpiresAt: DateTime
+  permissions: [String!]!
+  lastSyncedAt: DateTime!
+  isActive: Boolean!
+  connectedAt: DateTime!
+}
+
+# ============================================
+# CONNECTIONS & PAGINATION
+# ============================================
+
+type ContactConnection {
+  edges: [ContactEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ContactEdge {
+  node: Contact!
+  cursor: String!
+}
+
+type ActivityConnection {
+  edges: [ActivityEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ActivityEdge {
+  node: Activity!
+  cursor: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+# ============================================
+# INPUT TYPES
+# ============================================
+
+input ContactCreateInput {
+  firstName: String
+  lastName: String
+  email: EmailAddress
+  phone: PhoneNumber
+  title: String
+  company: String
+  website: URL
+  location: String
+  category: ContactCategory
+  vertical: VerticalType
+  tags: [String!]
+  customFields: JSON
+  autoEnrich: Boolean
+}
+
+input ContactUpdateInput {
+  firstName: String
+  lastName: String
+  email: EmailAddress
+  phone: PhoneNumber
+  title: String
+  company: String
+  website: URL
+  location: String
+  category: ContactCategory
+  vertical: VerticalType
+  tags: [String!]
+  customFields: JSON
+}
+
+input ContactFilterInput {
+  categories: [ContactCategory!]
+  verticals: [VerticalType!]
+  sources: [ContactSource!]
+  leadScores: [LeadScore!]
+  buyerStages: [BuyerStage!]
+  tags: [String!]
+  hasEmail: Boolean
+  hasPhone: Boolean
+  isEnriched: Boolean
+  createdAfter: DateTime
+  createdBefore: DateTime
+}
+
+input MarketplaceListingInput {
+  contactId: UUID!
+  title: String!
+  description: String!
+  price: Money!
+  category: ContactCategory!
+  vertical: VerticalType!
+  expiresInDays: Int
+}
+
+input WorkflowCreateInput {
+  name: String!
+  description: String
+  triggerType: String!
+  triggerConfig: JSON
+  actions: [WorkflowActionInput!]!
+  conditions: JSON
+  isActive: Boolean
+}
+
+input WorkflowActionInput {
+  type: String!
+  configuration: JSON
+  order: Int!
+}
+
+# ============================================
+# QUERIES
+# ============================================
+
+type Query {
+  # Organization
+  currentOrganization: Organization!
+  organizationById(id: UUID!): Organization
+
+  # Users
+  currentUser: User!
+  userById(id: UUID!): User
+  usersByOrganization(organizationId: UUID!): [User!]!
+
+  # Contacts
+  contact(id: UUID!): Contact
+  contacts(
+    filter: ContactFilterInput
+    first: Int
+    after: String
+    orderBy: String
+  ): ContactConnection!
+
+  # Contact Lists
+  contactList(id: UUID!): ContactList
+  contactLists(organizationId: UUID!): [ContactList!]!
+
+  # Marketplace
+  marketplaceListings(
+    vertical: VerticalType
+    category: ContactCategory
+    minPrice: Money
+    maxPrice: Money
+    first: Int
+    after: String
+  ): [MarketplaceListing!]!
+
+  marketplaceListing(id: UUID!): MarketplaceListing
+  myListings: [MarketplaceListing!]!
+  myPurchases: [MarketplacePurchase!]!
+
+  # Workflows
+  workflow(id: UUID!): Workflow
+  workflows(organizationId: UUID!): [Workflow!]!
+
+  # Activities
+  activitiesByContact(contactId: UUID!): [Activity!]!
+  activitiesByUser(userId: UUID!): ActivityConnection!
+
+  # Browser Extension
+  currentBrowserSession: BrowserSession
+  catchFolder: CatchFolder
+
+  # Subscription
+  subscription(organizationId: UUID!): Subscription!
+
+  # Vertical Config
+  verticalConfig(organizationId: UUID!): VerticalConfig!
+
+  # Search
+  searchContacts(query: String!, limit: Int): [Contact!]!
+
+  # Analytics
+  contactAnalytics(organizationId: UUID!): ContactAnalytics!
+  userAnalytics(userId: UUID!): UserAnalytics!
+}
+
+# ============================================
+# MUTATIONS
+# ============================================
+
+type Mutation {
+  # Auth
+  signUp(email: EmailAddress!, password: String!, organizationName: String!): AuthPayload!
+  signIn(email: EmailAddress!, password: String!): AuthPayload!
+  signOut: Boolean!
+  refreshToken(refreshToken: String!): AuthPayload!
+
+  # Organization
+  updateOrganization(id: UUID!, name: String, domain: String): Organization!
+  inviteTeamMember(email: EmailAddress!, role: UserRole!): User!
+
+  # Contacts
+  createContact(input: ContactCreateInput!): Contact!
+  updateContact(id: UUID!, input: ContactUpdateInput!): Contact!
+  deleteContact(id: UUID!): Boolean!
+  bulkCreateContacts(contacts: [ContactCreateInput!]!): [Contact!]!
+  bulkDeleteContacts(ids: [UUID!]!): Boolean!
+
+  # Enrichment
+  enrichContact(id: UUID!): Contact!
+  enrichContactsBulk(ids: [UUID!]!): [Contact!]!
+
+  # Contact Lists
+  createContactList(name: String!, description: String): ContactList!
+  updateContactList(id: UUID!, name: String, description: String): ContactList!
+  deleteContactList(id: UUID!): Boolean!
+  addContactsToList(listId: UUID!, contactIds: [UUID!]!): ContactList!
+  removeContactsFromList(listId: UUID!, contactIds: [UUID!]!): ContactList!
+  shareContactList(listId: UUID!, userIds: [UUID!]!): ContactList!
+
+  # Marketplace
+  createMarketplaceListing(input: MarketplaceListingInput!): MarketplaceListing!
+  updateMarketplaceListing(id: UUID!, price: Money, description: String): MarketplaceListing!
+  deleteMarketplaceListing(id: UUID!): Boolean!
+  purchaseMarketplaceListing(listingId: UUID!): MarketplacePurchase!
+
+  # Workflows
+  createWorkflow(input: WorkflowCreateInput!): Workflow!
+  updateWorkflow(id: UUID!, name: String, description: String, isActive: Boolean): Workflow!
+  deleteWorkflow(id: UUID!): Boolean!
+  executeWorkflow(id: UUID!, contactId: UUID!): Boolean!
+
+  # Activities
+  createActivity(
+    contactId: UUID!
+    type: String!
+    subject: String!
+    description: String
+  ): Activity!
+
+  createNote(contactId: UUID!, content: String!): Note!
+  updateNote(id: UUID!, content: String!): Note!
+  deleteNote(id: UUID!): Boolean!
+
+  createTask(
+    contactId: UUID!
+    title: String!
+    description: String
+    dueDate: DateTime
+  ): Task!
+  updateTask(id: UUID!, title: String, description: String, dueDate: DateTime): Task!
+  completeTask(id: UUID!): Task!
+  deleteTask(id: UUID!): Boolean!
+
+  # Browser Extension
+  startBrowserSession(extensionVersion: String!, browser: String!): BrowserSession!
+  captureContactFromBrowser(
+    url: URL!
+    platform: String!
+    contactData: ContactCreateInput!
+  ): Contact!
+  reviewCatchFolder(approve: [UUID!]!, reject: [UUID!]!): Boolean!
+
+  # Social Accounts
+  connectSocialAccount(platform: String!, code: String!): SocialAccount!
+  disconnectSocialAccount(id: UUID!): Boolean!
+  syncSocialContacts(accountId: UUID!): [Contact!]!
+
+  # Subscription
+  upgradeSuion(tier: SubscriptionTier!): Subscription!
+  cancelSubscription: Subscription!
+
+  # Vertical Config
+  updateVerticalConfig(
+    primaryVertical: VerticalType!
+    enabledVerticals: [VerticalType!]!
+  ): VerticalConfig!
+
+  # Webhooks
+  createWebhook(url: URL!, events: [WebhookEvent!]!): Webhook!
+  updateWebhook(id: UUID!, url: URL, events: [WebhookEvent!], isActive: Boolean): Webhook!
+  deleteWebhook(id: UUID!): Boolean!
+
+  # API Keys
+  createApiKey(name: String!, permissions: [String!]!): ApiKey!
+  revokeApiKey(id: UUID!): Boolean!
+}
+
+# ============================================
+# SUBSCRIPTIONS (Real-time)
+# ============================================
+
+type Subscription {
+  # Contact Updates
+  contactCreated(organizationId: UUID!): Contact!
+  contactUpdated(id: UUID!): Contact!
+  contactEnriched(id: UUID!): Contact!
+
+  # List Updates
+  contactAddedToList(listId: UUID!): Contact!
+  contactRemovedFromList(listId: UUID!): Contact!
+
+  # Marketplace
+  newMarketplaceListing(vertical: VerticalType, category: ContactCategory): MarketplaceListing!
+  listingSold(sellerId: UUID!): MarketplacePurchase!
+
+  # Activities
+  newActivity(contactId: UUID!): Activity!
+
+  # Notifications
+  newNotification(userId: UUID!): Notification!
+
+  # Browser Extension
+  browserCaptureCompleted(sessionId: UUID!): Contact!
+}
+
+# ============================================
+# SUPPORTING TYPES
+# ============================================
+
+type AuthPayload {
+  user: User!
+  organization: Organization!
+  accessToken: String!
+  refreshToken: String!
+  expiresIn: Int!
+}
+
+type ContactAnalytics {
+  totalContacts: Int!
+  contactsByCategory: [CategoryCount!]!
+  contactsBySource: [SourceCount!]!
+  contactsByVertical: [VerticalCount!]!
+  enrichmentRate: Float!
+  averageLeadScore: Float!
+  contactsAddedThisMonth: Int!
+  contactsAddedThisWeek: Int!
+  topIntentSignals: [IntentSignalCount!]!
+}
+
+type UserAnalytics {
+  contactsCreated: Int!
+  activitiesLogged: Int!
+  tasksCompleted: Int!
+  listsCreated: Int!
+  contactsCapturedViaExtension: Int!
+  lastActiveAt: DateTime!
+}
+
+type CategoryCount {
+  category: ContactCategory!
+  count: Int!
+}
+
+type SourceCount {
+  source: ContactSource!
+  count: Int!
+}
+
+type VerticalCount {
+  vertical: VerticalType!
+  count: Int!
+}
+
+type IntentSignalCount {
+  signal: IntentSignal!
+  count: Int!
+}
+
+# ============================================
+# DIRECTIVES
+# ============================================
+
+directive @auth(requires: UserRole!) on FIELD_DEFINITION
+directive @rateLimit(limit: Int!, window: String!) on FIELD_DEFINITION
+directive @deprecated(reason: String!) on FIELD_DEFINITION
+directive @cache(maxAge: Int!) on FIELD_DEFINITION
+
+# ============================================
+# END OF SCHEMA
+# ============================================
+# Total: 650+ lines of comprehensive GraphQL schema
+# Ready for all 6 teams to build against
