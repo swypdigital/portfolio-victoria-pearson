@@ -415,50 +415,29 @@ if [ -f "$BACKUP_DIR/.components/beautiful-report-library.sh" ]; then
     source "$BACKUP_DIR/.components/beautiful-report-library.sh"
 fi
 
-# Create beautiful completion summary with variable expansion
-cat > "$BEAUTIFUL_SUMMARY" << EOF
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                    ✨ SESSION COMPLETION SUMMARY ✨                           ║
-║                         $(date +'%Y-%m-%d %H:%M:%S %Z')                      ║
-╚══════════════════════════════════════════════════════════════════════════════╝
-
-🎯 MISSION: ${SESSION_SUMMARY:-Session completed successfully}
-📊 STATUS: ✅ COMPLETE SUCCESS - ALL OBJECTIVES ACHIEVED
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 COMPLETED WORK
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+# Prepare report content sections
+REPORT_COMPLETED=$(cat <<EOF
 ✅ TASKS COMPLETED
 ${COMPLETED_TASKS:-   • All session objectives achieved}
+EOF
+)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 KEY FILES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+REPORT_FILES=$(cat <<EOF
 📘 $BEAUTIFUL_SUMMARY - This completion report
 📊 Session capture: $CHAT_LINES lines via $CAPTURE_METHOD
 📁 Project: $PROJECT_NAME
 📁 Session ID: $SESSION_ID
+EOF
+)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔧 SYSTEM STATE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+REPORT_STATE=$(cat <<EOF
 ✅ $DAEMON_COUNT/12 daemons operational
 ✅ Session history: $CHAT_LINES lines captured
 ✅ Quantum TODO: $QUANTUM_PENDING pending tasks
+EOF
+)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 NEXT SESSION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${PENDING_TASKS:-1. Continue with project development}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏆 SUCCESS METRICS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+REPORT_METRICS=$(cat <<EOF
 ✅ 100% objectives achieved
 ✅ 0 critical issues remaining
 ✅ $DAEMON_COUNT/12 daemons operational
@@ -472,41 +451,45 @@ ${PENDING_TASKS:-1. Continue with project development}
 Token Usage: Managed within limits
 Duration: <5s execution time
 Status: READY FOR NEXT SESSION
-
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                     🎯 THANK YOU - SESSION SUCCESSFUL 🎯                     ║
-╚══════════════════════════════════════════════════════════════════════════════╝
-
 EOF
+)
+
+# Create beautiful completion summary using library function (MANDATORY)
+report_create_enhanced \
+    "SESSION COMPLETION SUMMARY" \
+    "${SESSION_SUMMARY:-Session completed successfully}" \
+    "✅ COMPLETE SUCCESS - ALL OBJECTIVES ACHIEVED" \
+    "$REPORT_COMPLETED" \
+    "${PENDING_TASKS:-1. Continue with project development}" \
+    "$REPORT_FILES" \
+    "$REPORT_STATE" \
+    "$REPORT_METRICS" \
+    "$BEAUTIFUL_SUMMARY" \
+    "session-end" > /dev/null
 
 echo "   ✅ Beautiful completion summary generated: $BEAUTIFUL_SUMMARY"
-
-# Auto-save the report to repository
-if [ "$BEAUTIFUL_REPORT_AUTOSAVE_ENABLED" = "true" ]; then
-    REPORT_ID=$(report_autosave_save "$BEAUTIFUL_SUMMARY" "session-end" "SESSION COMPLETION SUMMARY" "$SESSION_SUMMARY" "$STATUS")
-    echo "   💾 Report auto-saved to repository: $REPORT_ID"
-fi
 
 # STAGE 4: AUTO-EXTRACT CONTEXT (NO PLACEHOLDERS ALLOWED)
 # ========================================================
 echo ""
 echo "🔍 Auto-extracting session context..."
 
-# Extract project context from git
-GIT_REMOTE=$(git remote get-url origin 2>/dev/null || echo "No remote configured")
-GIT_BRANCH=$(git branch --show-current 2>/dev/null || echo "Unknown")
-GIT_RECENT_COMMITS=$(git log --oneline -5 2>/dev/null || echo "No commits")
-GIT_MODIFIED_FILES=$(git status --short 2>/dev/null | wc -l)
+# Extract project context from git (with 2-second timeout to avoid hangs in large repos)
+GIT_REMOTE=$(timeout 2 git remote get-url origin 2>/dev/null || echo "No remote configured")
+GIT_BRANCH=$(timeout 2 git branch --show-current 2>/dev/null || echo "Unknown")
+GIT_RECENT_COMMITS=$(timeout 2 git log --oneline -5 2>/dev/null || echo "No commits")
+GIT_MODIFIED_FILES=$(timeout 2 git status --short 2>/dev/null | wc -l || echo "0")
 
 # Auto-generate context (NO PLACEHOLDERS)
 AUTO_SESSION_SUMMARY="${SESSION_SUMMARY:-Session work completed successfully}"
 AUTO_COMPLETED_TASKS="${COMPLETED_TASKS:-All session objectives achieved per working directory analysis}"
 AUTO_PENDING_TASKS="${PENDING_TASKS:-Continue with project development and implementation}"
 
-# Extract modified files automatically
+# Extract modified files automatically (with timeout)
+GIT_STATUS_OUTPUT=$(timeout 2 git status --short 2>/dev/null || echo "Git status timed out (large repo)")
 AUTO_FILES_MODIFIED=$(cat <<EOF
 Modified Files (from git status):
-$(git status --short 2>/dev/null || echo "No git repository")
+$GIT_STATUS_OUTPUT
 
 Recent commits:
 $GIT_RECENT_COMMITS
@@ -938,18 +921,25 @@ verify_session_completeness() {
     local files_with_placeholders=0
 
     # List each file with full path, size, and line count
-    for file in "$END_REPORT" "$TODO_FILE" "$NEXT_INSTRUCTIONS" "$DEP_MANIFEST" "$SESSION_STATE" "$HANDOFF_FILE" "$HANDOFF_MD"; do
+    # INCLUDES CHAT BACKUP as primary session artifact
+    for file in "$CHAT_BACKUP_FILE" "$END_REPORT" "$TODO_FILE" "$NEXT_INSTRUCTIONS" "$DEP_MANIFEST" "$SESSION_STATE" "$HANDOFF_FILE" "$HANDOFF_MD"; do
         ((total_files++))
         if [[ -f "$file" ]]; then
             local lines=$(wc -l < "$file" 2>/dev/null || echo "0")
             local size=$(du -h "$file" 2>/dev/null | cut -f1 || echo "0B")
+
+            # Special indicator for chat backup (primary artifact)
+            local indicator="✅"
+            if [[ "$file" == "$CHAT_BACKUP_FILE" ]]; then
+                indicator="💬✅"
+            fi
 
             # Check for unfilled placeholders (CRITICAL VALIDATION)
             if grep -q "\[CLAUDE MUST" "$file" 2>/dev/null; then
                 ((files_with_placeholders++))
                 echo "   ❌ $file ($lines lines, $size) - CONTAINS PLACEHOLDERS"
             else
-                echo "   ✅ $file ($lines lines, $size)"
+                echo "   $indicator $file ($lines lines, $size)"
             fi
         else
             ((missing_files++))
@@ -957,33 +947,30 @@ verify_session_completeness() {
         fi
     done
 
-    echo ""
-    echo "📝 SESSION CAPTURE FILES:"
-
-    # Check for session history files (prioritize lines over words)
-    if [[ -f "$CHAT_BACKUP_FILE" ]]; then
-        local chat_lines=$(wc -l < "$CHAT_BACKUP_FILE" 2>/dev/null || echo "0")
-        echo "   ✅ Chat Backup: $CHAT_BACKUP_FILE ($chat_lines lines)"
-    fi
-
     # Check universal history directory for any session files created today
     local today=$(date +%Y-%m-%d)
     local session_files=$(find "$UNIVERSAL_HISTORY_DIR/sessions/$today" -name "*claude-*" -type f 2>/dev/null || true)
     if [[ -n "$session_files" ]]; then
-        echo "   📚 UNIVERSAL HISTORY FILES:"
+        echo ""
+        echo "📚 ADDITIONAL SESSION HISTORY (Universal History):"
         echo "$session_files" | while read -r file; do
             if [[ -f "$file" ]]; then
                 local hist_lines=$(wc -l < "$file" 2>/dev/null || echo "0")
-                echo "     ✅ $file ($hist_lines lines)"
+                echo "   ✅ $file ($hist_lines lines)"
             fi
         done
     fi
 
     echo ""
     echo "🔍 VERIFICATION SUMMARY:"
-    echo "   📊 Files Generated: $((total_files - missing_files))/$total_files"
+    echo "   📊 Total Files Generated: $((total_files - missing_files))/$total_files"
     echo "   📊 Files with Placeholders: $files_with_placeholders/$total_files"
-    echo "   📊 Chat History Captured: $(find "$UNIVERSAL_HISTORY_DIR" -name "*$(date +%Y-%m-%d)*" -type f 2>/dev/null | wc -l) files"
+    if [[ -f "$CHAT_BACKUP_FILE" ]]; then
+        local chat_lines=$(wc -l < "$CHAT_BACKUP_FILE" 2>/dev/null || echo "0")
+        local chat_size=$(du -h "$CHAT_BACKUP_FILE" 2>/dev/null | cut -f1 || echo "0B")
+        echo "   💬 Chat Conversation Captured: $chat_lines lines ($chat_size)"
+    fi
+    echo "   📊 Additional History Files: $(find "$UNIVERSAL_HISTORY_DIR" -name "*$(date +%Y-%m-%d)*" -type f 2>/dev/null | wc -l) files"
     echo "   📊 Session ID: $SESSION_ID"
     echo "   📊 Project: $PROJECT_NAME"
     echo "   📊 Timestamp: $TIMESTAMP_PDT"

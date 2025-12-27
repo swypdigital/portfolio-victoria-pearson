@@ -5,20 +5,20 @@
 # === PROJECT NAVIGATOR ALIASES ===
 
 # Main project navigator TUI
-alias pn='/mnt/c/Users/jdh/claude_projects/project-navigator.sh'
+alias pn='$CLAUDE_PROJECTS_ROOT/project-navigator.sh'
 alias proj='pn'  # Short version
 
 # Quick project navigation
-alias goto-cp='cd /mnt/c/Users/jdh/claude_projects'
-alias goto-iv='cd /mnt/c/Users/jdh/claude_projects/projects/github-repos/interviewplus-production'
-alias goto-gc='cd /mnt/c/Users/jdh/claude_projects/gencraft-v3.0'
-alias goto-tc='cd /mnt/c/Users/jdh/claude_projects/token-cost-calculator'
+alias goto-cp='cd $CLAUDE_PROJECTS_ROOT'
+alias goto-iv='cd $CLAUDE_PROJECTS_ROOT/projects/github-repos/interviewplus-production'
+alias goto-gc='cd $CLAUDE_PROJECTS_ROOT/gencraft'
+alias goto-tc='cd $CLAUDE_PROJECTS_ROOT/token-cost-calculator'
 
 # Project info shortcuts
-alias proj-status='for dir in /mnt/c/Users/jdh/claude_projects/projects/github-repos/*/; do echo "=== $(basename $dir) ===" && cd "$dir" && git status -sb && cd /mnt/c/Users/jdh/claude_projects; done'
-alias proj-list='find /mnt/c/Users/jdh/claude_projects -name ".git" -type d | sed "s|/.git||" | sed "s|/mnt/c/Users/jdh/claude_projects/||" | sort'
+alias proj-status='for dir in $CLAUDE_PROJECTS_ROOT/projects/github-repos/*/; do echo "=== $(basename $dir) ===" && cd "$dir" && git status -sb && cd $CLAUDE_PROJECTS_ROOT; done'
+alias proj-list='find $CLAUDE_PROJECTS_ROOT -name ".git" -type d | sed "s|/.git||" | sed "s|$CLAUDE_PROJECTS_ROOT/||" | sort'
 
 # Worktree shortcuts
-alias wt='/mnt/c/Users/jdh/claude_projects/worktree-commands.sh'
+alias wt='$CLAUDE_PROJECTS_ROOT/worktree-commands.sh'
 alias wt-list='git worktree list'
-alias wt-status='/mnt/c/Users/jdh/claude_projects/worktree-session-mapper.sh status'
+alias wt-status='$CLAUDE_PROJECTS_ROOT/worktree-session-mapper.sh status'

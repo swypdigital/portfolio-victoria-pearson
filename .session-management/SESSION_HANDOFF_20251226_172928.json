@@ -1,0 +1,28 @@
+{
+    "timestamp": "2025-12-27T01:29:28Z",
+    "session_id": "claude-vibe-os-1766451129",
+    "project_name": "vibe-os",
+    "tmux_session": "claude-vibe-os",
+    "history_file": "/mnt/c/Users/jdh/claude_projects/.universal-history/sessions/2025-12-26/session_172820_claude_projects.md",
+    "quantum_todo": "/mnt/c/Users/jdh/claude_projects/.quantum-todo/quantum-index.db",
+    "line_count": 8,
+    "universal_history_dir": "/mnt/c/Users/jdh/claude_projects/.universal-history",
+    "working_directory": "/mnt/c/Users/jdh/claude_projects",
+    "worktree_path": "/mnt/c/Users/jdh/claude_projects/../claude_projects_worktrees/claude-claude_projects-1765676605",
+    "using_worktree": "true",
+    "completeness_check": {
+        "files_to_generate": [
+            "/mnt/c/Users/jdh/claude_projects/END_SESSION_REPORT_vibe-os_claude-vibe-os-1766451129.md",
+            "/mnt/c/Users/jdh/claude_projects/TODO_NEXT_SESSION_vibe-os_claude-vibe-os-1766451129.md", 
+            "/mnt/c/Users/jdh/claude_projects/NEXT_SESSION_INSTRUCTIONS_vibe-os_claude-vibe-os-1766451129.md",
+            "/mnt/c/Users/jdh/claude_projects/SESSION_DEPENDENCIES_vibe-os_claude-vibe-os-1766451129.md",
+            "",
+            "/mnt/c/Users/jdh/claude_projects/.session-management/SESSION_HANDOFF_20251226_172928.json",
+            "/mnt/c/Users/jdh/claude_projects/SESSION_HANDOFF_20251226_172928.md"
+        ],
+        "chat_capture_lines": 672,
+        "session_capture_file": "/mnt/c/Users/jdh/claude_projects/.universal-history/sessions/2025-12-26/session_172820_claude_projects.md",
+        "universal_history_dir": "/mnt/c/Users/jdh/claude_projects/.universal-history",
+        "verification_timestamp": "2025-12-26 17:29:28 PDT"
+    }
+}

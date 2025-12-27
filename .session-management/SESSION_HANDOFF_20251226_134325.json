@@ -1,0 +1,28 @@
+{
+    "timestamp": "2025-12-26T21:43:25Z",
+    "session_id": "claude-victoria pearson portfolio-1766463550",
+    "project_name": "victoria pearson portfolio",
+    "tmux_session": "claude-victoria pearson portfolio",
+    "history_file": "",
+    "quantum_todo": "/mnt/c/Users/jdh/claude_projects/.quantum-todo/quantum-index.db",
+    "line_count": 0,
+    "universal_history_dir": "/mnt/c/Users/jdh/claude_projects/.universal-history",
+    "working_directory": "/mnt/c/Users/jdh/claude_projects",
+    "worktree_path": "/mnt/c/Users/jdh/claude_projects/../claude_projects_worktrees/claude-claude_projects-1765676605",
+    "using_worktree": "true",
+    "completeness_check": {
+        "files_to_generate": [
+            "/mnt/c/Users/jdh/claude_projects/END_SESSION_REPORT_victoria pearson portfolio_claude-victoria pearson portfolio-1766463550.md",
+            "/mnt/c/Users/jdh/claude_projects/TODO_NEXT_SESSION_victoria pearson portfolio_claude-victoria pearson portfolio-1766463550.md", 
+            "/mnt/c/Users/jdh/claude_projects/NEXT_SESSION_INSTRUCTIONS_victoria pearson portfolio_claude-victoria pearson portfolio-1766463550.md",
+            "/mnt/c/Users/jdh/claude_projects/SESSION_DEPENDENCIES_victoria pearson portfolio_claude-victoria pearson portfolio-1766463550.md",
+            "",
+            "/mnt/c/Users/jdh/claude_projects/.session-management/SESSION_HANDOFF_20251226_134325.json",
+            "/mnt/c/Users/jdh/claude_projects/SESSION_HANDOFF_20251226_134325.md"
+        ],
+        "chat_capture_lines": 3313,
+        "session_capture_file": "",
+        "universal_history_dir": "/mnt/c/Users/jdh/claude_projects/.universal-history",
+        "verification_timestamp": "2025-12-26 13:43:25 PDT"
+    }
+}
