@@ -108,6 +108,15 @@ body.light-theme {
     --text-tertiary: #9CA3AF;
 }
 
+/* Fix navbar link text color in light mode - white text on black background */
+body.light-theme .nav-link {
+    color: #FFFFFF;
+}
+
+body.light-theme .nav-link:hover {
+    color: var(--electric-blue);
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
