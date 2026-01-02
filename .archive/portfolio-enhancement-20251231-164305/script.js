@@ -136,70 +136,25 @@ document.querySelectorAll('.stat-card').forEach(card => {
     statsObserver.observe(card);
 });
 
-// ===================================
-// PHASE 5: Enhanced Parallax Depth Effect
-// Multi-layer parallax for professional depth
-// ===================================
-
-// Throttle function for performance
-const throttle = (func, limit) => {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-};
-
-// Check if user prefers reduced motion
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// Enhanced parallax with multiple layers
-const handleParallax = throttle(() => {
-    if (prefersReducedMotion) return; // Respect accessibility preferences
-
+// Parallax Effect on Hero Background
+window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
-    const heroSection = document.querySelector('.hero');
-
-    if (!heroSection) return;
-
-    const heroHeight = heroSection.offsetHeight;
-
-    // Only apply parallax when hero is in viewport
-    if (scrolled < heroHeight) {
-        // Layer 1: Background (slowest - 0.5x speed)
-        const heroBackground = document.querySelector('.hero-background');
-        if (heroBackground) {
-            heroBackground.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
-        }
-
-        // Layer 2: Particles (medium - 0.7x speed)
-        const particlesContainer = document.querySelector('.particles-container');
-        if (particlesContainer) {
-            particlesContainer.style.transform = `translate3d(0, ${scrolled * 0.7}px, 0)`;
-        }
-
-        // Layer 3: Content stays at normal scroll speed (1x)
-        // No transform needed - natural scroll behavior
-
-        // Bonus: Fade out scroll indicator
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        if (scrollIndicator) {
-            const opacity = Math.max(0, 1 - (scrolled / 300));
-            scrollIndicator.style.opacity = opacity;
-        }
+    const heroBackground = document.querySelector('.hero-background');
+    if (heroBackground && scrolled < window.innerHeight) {
+        heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
-}, 16); // 60fps = ~16ms
+});
 
-// Add parallax scroll listener
-window.addEventListener('scroll', handleParallax, { passive: true });
-
-// Note: Dynamic gradient animation now handled via CSS for better performance
-// See .hero-background animation in styles.css
+// Dynamic Gradient Animation
+const heroBackground = document.querySelector('.hero-background');
+if (heroBackground) {
+    let hue = 0;
+    setInterval(() => {
+        hue = (hue + 1) % 360;
+        // Subtle color shift for background gradients
+        heroBackground.style.filter = `hue-rotate(${hue * 0.1}deg)`;
+    }, 100);
+}
 
 // Add cursor pointer to interactive elements
 document.querySelectorAll('.btn, .nav-link, .contact-btn, .theme-toggle').forEach(el => {
@@ -229,15 +184,5 @@ window.addEventListener('scroll', () => {
     });
 }, { passive: true });
 
-// ===================================
-// PERFORMANCE MONITORING
-// ===================================
 console.log('%c Victoria Pearson Portfolio ', 'background: linear-gradient(135deg, #339CFF 0%, #0D9488 100%); color: white; font-size: 16px; padding: 10px 20px; border-radius: 8px; font-weight: bold;');
 console.log('%c Built with AI-Augmented Development | GroklyGroup Design System ', 'color: #339CFF; font-size: 12px; font-weight: 600;');
-console.log('%c VC-Level Animations Active ✨ ', 'color: #0D9488; font-size: 11px; font-weight: 600;');
-console.log('%c → Floating Particles (15 elements)', 'color: #6B7280; font-size: 10px;');
-console.log('%c → Gradient Mesh Breathing', 'color: #6B7280; font-size: 10px;');
-console.log('%c → Scanline Effect', 'color: #6B7280; font-size: 10px;');
-console.log('%c → Multi-layer Parallax', 'color: #6B7280; font-size: 10px;');
-console.log('%c → CTA Button Glow Pulse', 'color: #6B7280; font-size: 10px;');
-console.log('%c Performance: GPU-accelerated | 60fps target | Accessibility-ready ', 'color: #10B981; font-size: 10px; font-weight: 600;');
